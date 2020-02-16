@@ -1,0 +1,19 @@
+{
+  "name": "mega-widget",
+  "version": "1.0.0",
+  "description": "Simple plugin",
+  "main_file": "mega-widget.php",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ernilambar/mega-widget.git"
+  },
+  "author": "Nilambar Sharma",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-wp-i18n": "^1.0.3"
+  }
+}
