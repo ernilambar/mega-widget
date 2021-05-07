@@ -4,8 +4,8 @@ Contributors: rabmalin
 Donate link: https://www.nilambar.net/
 Requires at least: 5.0
 Requires PHP: 5.6.20
-Tested up to: 5.3
-Stable tag: 1.0.0
+Tested up to: 5.7
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,9 @@ Mega Widget is a simple plugin which displays all core widgets in the widget are
 * Based on https://wordpress.org/plugins/monster-widget/
 
 == Changelog ==
+
+= 1.0.1 - 7 May 2021 =
+* Minor fixes
 
 = 1.0.0 - 16 Feb 2020 =
 * Initial release

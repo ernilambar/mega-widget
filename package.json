@@ -1,19 +1,23 @@
 {
   "name": "mega-widget",
-  "version": "1.0.0",
-  "description": "Simple plugin",
-  "main_file": "mega-widget.php",
-  "main": "Gruntfile.js",
+  "version": "1.0.1",
+  "description": "A small plugin to display all core widgets.",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ernilambar/mega-widget.git"
   },
   "author": "Nilambar Sharma",
-  "license": "MIT",
+  "license": "GPL-2.0+",
+  "scripts": {
+    "pot": "yarn run textdomain && yarn run language",
+    "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
+    "textdomain": "wpi18n addtextdomain",
+    "deploy": "del deploy && mkdir deploy && copyfiles '**/*.*' deploy/mega-widget -e 'node_modules/**/*.*' -e 'package.json' -e 'yarn.lock'"
+  },
   "devDependencies": {
-    "grunt": "^1.3.0",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-wp-i18n": "^1.0.3"
+    "copyfiles": "^2.4.1",
+    "del-cli": "^3.0.1",
+    "make-dir-cli": "^3.0.0",
+    "node-wp-i18n": "^1.2.5"
   }
 }

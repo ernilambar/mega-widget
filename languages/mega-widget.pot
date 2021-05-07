@@ -1,0 +1,177 @@
+# Copyright (C) 2021 Nilambar Sharma
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mega Widget 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mega-widget\n"
+"POT-Creation-Date: 2021-05-07 14:42:28+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: node-wp-i18n 1.2.5\n"
+
+#. Plugin Name of the plugin/theme
+msgid "Mega Widget"
+msgstr ""
+
+#: inc/class-mega-widget.php:59
+msgid "Test multiple widgets at the same time."
+msgstr ""
+
+#: inc/class-mega-widget.php:155
+msgid "Search"
+msgstr ""
+
+#: inc/class-mega-widget.php:161
+msgid "Recent Posts"
+msgstr ""
+
+#: inc/class-mega-widget.php:168
+msgid "Simple Image"
+msgstr ""
+
+#: inc/class-mega-widget.php:171
+msgid "No caption is also a caption."
+msgstr ""
+
+#: inc/class-mega-widget.php:177
+msgid "Linked Image"
+msgstr ""
+
+#: inc/class-mega-widget.php:187
+msgid "Recent Comments"
+msgstr ""
+
+#: inc/class-mega-widget.php:194
+msgid "Meta"
+msgstr ""
+
+#: inc/class-mega-widget.php:200
+msgid "Calendar"
+msgstr ""
+
+#: inc/class-mega-widget.php:206
+msgid "Gallery: 3 columns "
+msgstr ""
+
+#: inc/class-mega-widget.php:215
+msgid "Gallery: 2 columns "
+msgstr ""
+
+#: inc/class-mega-widget.php:225
+msgid "Gallery: 4 columns "
+msgstr ""
+
+#: inc/class-mega-widget.php:235
+msgid "Archives Dropdown"
+msgstr ""
+
+#: inc/class-mega-widget.php:243
+msgid "Categories Dropdown"
+msgstr ""
+
+#: inc/class-mega-widget.php:252
+msgid "Tag Cloud"
+msgstr ""
+
+#: inc/class-mega-widget.php:260
+msgid "Archives List"
+msgstr ""
+
+#: inc/class-mega-widget.php:268
+msgid "Categories List"
+msgstr ""
+
+#: inc/class-mega-widget.php:277
+msgid "Pages"
+msgstr ""
+
+#: inc/class-mega-widget.php:285
+msgid "RSS"
+msgstr ""
+
+#: inc/class-mega-widget.php:296
+msgid "Text"
+msgstr ""
+
+#: inc/class-mega-widget.php:304
+msgid "Audio"
+msgstr ""
+
+#: inc/class-mega-widget.php:311
+msgid "Video"
+msgstr ""
+
+#: inc/class-mega-widget.php:322
+msgid "Nav Menu"
+msgstr ""
+
+#: inc/class-mega-widget.php:334
+msgid "Links"
+msgstr ""
+
+#: inc/class-mega-widget.php:416
+msgid "Large image: Hand Coded"
+msgstr ""
+
+#: inc/class-mega-widget.php:419
+msgid "Large image: linked in a caption"
+msgstr ""
+
+#: inc/class-mega-widget.php:420
+msgid "This image is 960 by 720 pixels."
+msgstr ""
+
+#: inc/class-mega-widget.php:422
+msgid "Lorem title!"
+msgstr ""
+
+#: inc/class-mega-widget.php:423
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a dolor nunc. "
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque "
+"habitant morbi tristique senectus et netus et malesuada fames ac turpis "
+"egestas. Fusce imperdiet, nibh sed aliquam egestas, sem neque scelerisque "
+"urna, vel suscipit lectus ex ac magna. Nam eget viverra magna. Integer a "
+"lectus urna. Phasellus vel urna vitae lectus luctus egestas et eu sapien. "
+"In sed turpis vitae tellus ultrices ultrices sit amet et purus. Proin "
+"suscipit auctor mauris, cursus ultrices metus lobortis vel. Aenean sed "
+"lorem vel sem tempus commodo. Aenean sit amet pulvinar lorem. Nam ut mollis "
+"dui. Maecenas dapibus vulputate posuere. Aenean ut ipsum cursus, imperdiet "
+"metus ut, auctor risus."
+msgstr ""
+
+#: inc/class-mega-widget.php:425
+msgid "Smile!"
+msgstr ""
+
+#: inc/class-mega-widget.php:428
+msgid "Select Element with long value"
+msgstr ""
+
+#: inc/class-mega-widget.php:432
+msgid "First"
+msgstr ""
+
+#: inc/class-mega-widget.php:433
+msgid "Second"
+msgstr ""
+
+#: inc/class-mega-widget.php:434
+msgid "Third"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A small plugin to display all core widgets."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Nilambar Sharma"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.nilambar.net/"
+msgstr ""
