@@ -1,6 +1,6 @@
 {
   "name": "mega-widget",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small plugin to display all core widgets.",
   "repository": {
     "type": "git",
@@ -9,15 +9,14 @@
   "author": "Nilambar Sharma",
   "license": "GPL-2.0+",
   "scripts": {
-    "pot": "yarn run textdomain && yarn run language",
+    "pot": "npm run textdomain && npm run language",
     "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
-    "textdomain": "wpi18n addtextdomain",
-    "deploy": "del deploy && mkdir deploy && copyfiles '**/*.*' deploy/mega-widget -e 'node_modules/**/*.*' -e 'package.json' -e 'yarn.lock'"
+    "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules",
+    "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copyfiles \"**/*.*\" deploy/mega-widget -e \"node_modules/**/*.*\" -e \"package.json\" -e \"package-lock.json\""
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",
-    "del-cli": "^3.0.1",
-    "make-dir-cli": "^3.0.0",
-    "node-wp-i18n": "^1.2.5"
+    "node-wp-i18n": "^1.2.6",
+    "shx": "^0.3.4"
   }
 }
