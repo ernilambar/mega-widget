@@ -12,11 +12,13 @@
     "pot": "npm run textdomain && npm run language",
     "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
     "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules",
+		"readme": "wp-readme-to-md",
     "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copyfiles \"**/*.*\" deploy/mega-widget -e \"node_modules/**/*.*\" -e \"package.json\" -e \"package-lock.json\""
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "node-wp-i18n": "^1.2.6",
-    "shx": "^0.3.4"
+    "shx": "^0.3.4",
+    "wp-readme-to-markdown": "^1.0.1"
   }
 }
