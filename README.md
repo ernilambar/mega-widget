@@ -23,14 +23,14 @@ Mega Widget is a simple plugin which displays all core widgets in the widget are
 1. Select 'mega-widget.zip' from your computer
 1. Install
 1. Activate the plugin on the WordPress Plugin Dashboard
-1. Place the 'Date Display Widget' Widget into a Widget area through the 'Appearance -> Widgets' menu in WordPress.
+1. Place the 'Mega Widget' Widget into a Widget area through the 'Appearance -> Widgets' menu in WordPress.
 
 ### Using FTP ###
 
 1. Extract 'mega-widget.zip' to your computer
 1. Upload the 'mega-widget' directory to your '/wp-content/plugins/' directory
 1. Activate the plugin on the WordPress Plugins dashboard
-1. Place the 'Date Display Widget' Widget into a Widget area through the 'Appearance -> Widgets' menu in WordPress.
+1. Place the 'Mega Widget' Widget into a Widget area through the 'Appearance -> Widgets' menu in WordPress.
 
 ## Credits ##
 
