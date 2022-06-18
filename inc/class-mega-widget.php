@@ -156,10 +156,22 @@ class Mega_Widget extends WP_Widget {
 				),
 			),
 			array(
+				'WP_Widget_Block',
+				array(
+					'content' => '<!-- wp:search /-->',
+				),
+			),
+			array(
 				'WP_Widget_Recent_Posts',
 				array(
 					'title'  => esc_html__( 'Recent Posts', 'mega-widget' ),
 					'number' => 5,
+				),
+			),
+			array(
+				'WP_Widget_Block',
+				array(
+					'content'  => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Recent Posts New</h2><!-- /wp:heading --><!-- wp:latest-posts /--></div><!-- /wp:group -->',
 				),
 			),
 			array(
@@ -189,6 +201,12 @@ class Mega_Widget extends WP_Widget {
 				),
 			),
 			array(
+				'WP_Widget_Block',
+				array(
+					'content' => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Recent Comments New</h2><!-- /wp:heading --><!-- wp:latest-comments {"displayAvatar":false,"displayDate":false,"displayExcerpt":false} /--></div><!-- /wp:group -->',
+				),
+			),
+			array(
 				'WP_Widget_Meta',
 				array(
 					'title' => esc_html__( 'Meta', 'mega-widget' ),
@@ -198,6 +216,12 @@ class Mega_Widget extends WP_Widget {
 				'WP_Widget_Calendar',
 				array(
 					'title' => esc_html__( 'Calendar', 'mega-widget' ),
+				),
+			),
+			array(
+				'WP_Widget_Block',
+				array(
+					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Calendar New</h2><!-- /wp:heading --><!-- wp:calendar /--></div><!-- /wp:group -->',
 				),
 			),
 			array(
@@ -255,11 +279,23 @@ class Mega_Widget extends WP_Widget {
 				),
 			),
 			array(
+				'WP_Widget_Block',
+				array(
+					'content'  => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Tag Cloud New</h2><!-- /wp:heading --><!-- wp:tag-cloud {"showTagCounts":true} /--></div><!-- /wp:group -->',
+				),
+			),
+			array(
 				'WP_Widget_Archives',
 				array(
 					'title'    => esc_html__( 'Archives List', 'mega-widget' ),
 					'count'    => 1,
 					'dropdown' => 0,
+				),
+			),
+			array(
+				'WP_Widget_Block',
+				array(
+					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Archives New</h2><!-- /wp:heading --><!-- wp:archives {"showPostCounts":true} /--></div><!-- /wp:group -->',
 				),
 			),
 			array(
@@ -272,6 +308,12 @@ class Mega_Widget extends WP_Widget {
 				),
 			),
 			array(
+				'WP_Widget_Block',
+				array(
+					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Categories New</h2><!-- /wp:heading --><!-- wp:categories {"showPostCounts":true} /--></div><!-- /wp:group -->',
+				),
+			),
+			array(
 				'WP_Widget_Pages',
 				array(
 					'title'   => esc_html__( 'Pages', 'mega-widget' ),
@@ -280,14 +322,26 @@ class Mega_Widget extends WP_Widget {
 				),
 			),
 			array(
+				'WP_Widget_Block',
+				array(
+					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Pages New</h2><!-- /wp:heading --><!-- wp:page-list /--></div><!-- /wp:group -->',
+				),
+			),
+			array(
 				'WP_Widget_RSS',
 				array(
 					'title'        => esc_html__( 'RSS', 'mega-widget' ),
-					'url'          => 'http://themeshaper.com/feed',
+					'url'          => 'https://themeshaper.com/feed/',
 					'items'        => 2,
 					'show_author'  => true,
 					'show_date'    => true,
 					'show_summary' => true,
+				),
+			),
+			array(
+				'WP_Widget_Block',
+				array(
+					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>RSS New</h2><!-- /wp:heading --><!-- wp:rss {"feedURL":"https://themeshaper.com/feed/","itemsToShow":2,"displayExcerpt":true,"displayAuthor":true,"displayDate":true} /--></div><!-- /wp:group -->',
 				),
 			),
 			array(
@@ -306,10 +360,28 @@ class Mega_Widget extends WP_Widget {
 				),
 			),
 			array(
+				'WP_Widget_Block',
+				array(
+					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Audio New</h2><!-- /wp:heading --><!-- wp:audio -->
+					<figure class="wp-block-audio"><audio controls src="https://wpthemetestdata.files.wordpress.com/2008/06/originaldixielandjazzbandwithalbernard-stlouisblues.mp3"></audio></figure>
+					<!-- /wp:audio --></div><!-- /wp:group -->',
+				),
+			),
+			array(
 				'WP_Widget_Media_Video',
 				array(
 					'title' => esc_html__( 'Video', 'mega-widget' ),
 					'url'   => 'https://www.youtube.com/watch?v=SQEQr7c0-dw',
+				),
+			),
+			array(
+				'WP_Widget_Block',
+				array(
+					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Video New</h2><!-- /wp:heading --><!-- wp:embed {"url":"https://www.youtube.com/watch?v=SQEQr7c0-dw","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+					<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+					https://www.youtube.com/watch?v=SQEQr7c0-dw
+					</div></figure>
+					<!-- /wp:embed --></div><!-- /wp:group -->',
 				),
 			),
 		);
