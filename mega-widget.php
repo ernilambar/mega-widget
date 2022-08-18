@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Mega Widget
  * Description: A small plugin to display all core widgets.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Nilambar Sharma
  * Author URI: https://www.nilambar.net/
  * License: GPLv2 or later
