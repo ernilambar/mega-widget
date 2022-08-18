@@ -38,6 +38,9 @@ Mega Widget is a simple plugin which displays all core widgets in the widget are
 
 ## Changelog ##
 
+### 1.0.3 - 18 Aug 2022 ###
+* Minor fixes
+
 ### 1.0.2 - 17 Jun 2022 ###
 * Minor fixes
 

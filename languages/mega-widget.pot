@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Mega Widget 1.0.2\n"
+"Project-Id-Version: Mega Widget 1.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mega-widget\n"
-"POT-Creation-Date: 2022-06-17 16:16:09+00:00\n"
+"POT-Creation-Date: 2022-08-18 16:02:16+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,111 +25,111 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: inc/class-mega-widget.php:161
+#: inc/class-mega-widget.php:167
 msgid "Recent Posts"
 msgstr ""
 
-#: inc/class-mega-widget.php:168
+#: inc/class-mega-widget.php:180
 msgid "Simple Image"
 msgstr ""
 
-#: inc/class-mega-widget.php:171
+#: inc/class-mega-widget.php:183
 msgid "No caption is also a caption."
 msgstr ""
 
-#: inc/class-mega-widget.php:177
+#: inc/class-mega-widget.php:189
 msgid "Linked Image"
 msgstr ""
 
-#: inc/class-mega-widget.php:187
+#: inc/class-mega-widget.php:199
 msgid "Recent Comments"
 msgstr ""
 
-#: inc/class-mega-widget.php:194
+#: inc/class-mega-widget.php:212
 msgid "Meta"
 msgstr ""
 
-#: inc/class-mega-widget.php:200
+#: inc/class-mega-widget.php:218
 msgid "Calendar"
 msgstr ""
 
-#: inc/class-mega-widget.php:206
+#: inc/class-mega-widget.php:230
 msgid "Gallery: 3 columns "
 msgstr ""
 
-#: inc/class-mega-widget.php:215
+#: inc/class-mega-widget.php:239
 msgid "Gallery: 2 columns "
 msgstr ""
 
-#: inc/class-mega-widget.php:225
+#: inc/class-mega-widget.php:249
 msgid "Gallery: 4 columns "
 msgstr ""
 
-#: inc/class-mega-widget.php:235
+#: inc/class-mega-widget.php:259
 msgid "Archives Dropdown"
 msgstr ""
 
-#: inc/class-mega-widget.php:243
+#: inc/class-mega-widget.php:267
 msgid "Categories Dropdown"
 msgstr ""
 
-#: inc/class-mega-widget.php:252
+#: inc/class-mega-widget.php:276
 msgid "Tag Cloud"
 msgstr ""
 
-#: inc/class-mega-widget.php:260
+#: inc/class-mega-widget.php:290
 msgid "Archives List"
 msgstr ""
 
-#: inc/class-mega-widget.php:268
+#: inc/class-mega-widget.php:304
 msgid "Categories List"
 msgstr ""
 
-#: inc/class-mega-widget.php:277
+#: inc/class-mega-widget.php:319
 msgid "Pages"
 msgstr ""
 
-#: inc/class-mega-widget.php:285
+#: inc/class-mega-widget.php:333
 msgid "RSS"
 msgstr ""
 
-#: inc/class-mega-widget.php:296
+#: inc/class-mega-widget.php:350
 msgid "Text"
 msgstr ""
 
-#: inc/class-mega-widget.php:304
+#: inc/class-mega-widget.php:358
 msgid "Audio"
 msgstr ""
 
-#: inc/class-mega-widget.php:311
+#: inc/class-mega-widget.php:373
 msgid "Video"
 msgstr ""
 
-#: inc/class-mega-widget.php:322
+#: inc/class-mega-widget.php:394
 msgid "Nav Menu"
 msgstr ""
 
-#: inc/class-mega-widget.php:334
+#: inc/class-mega-widget.php:406
 msgid "Links"
 msgstr ""
 
-#: inc/class-mega-widget.php:416
+#: inc/class-mega-widget.php:488
 msgid "Large image: Hand Coded"
 msgstr ""
 
-#: inc/class-mega-widget.php:419
+#: inc/class-mega-widget.php:491
 msgid "Large image: linked in a caption"
 msgstr ""
 
-#: inc/class-mega-widget.php:420
+#: inc/class-mega-widget.php:492
 msgid "This image is 960 by 720 pixels."
 msgstr ""
 
-#: inc/class-mega-widget.php:422
+#: inc/class-mega-widget.php:494
 msgid "Lorem title!"
 msgstr ""
 
-#: inc/class-mega-widget.php:423
+#: inc/class-mega-widget.php:495
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a dolor nunc. "
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque "
@@ -144,23 +144,23 @@ msgid ""
 "metus ut, auctor risus."
 msgstr ""
 
-#: inc/class-mega-widget.php:425
+#: inc/class-mega-widget.php:497
 msgid "Smile!"
 msgstr ""
 
-#: inc/class-mega-widget.php:428
+#: inc/class-mega-widget.php:500
 msgid "Select Element with long value"
 msgstr ""
 
-#: inc/class-mega-widget.php:432
+#: inc/class-mega-widget.php:504
 msgid "First"
 msgstr ""
 
-#: inc/class-mega-widget.php:433
+#: inc/class-mega-widget.php:505
 msgid "Second"
 msgstr ""
 
-#: inc/class-mega-widget.php:434
+#: inc/class-mega-widget.php:506
 msgid "Third"
 msgstr ""
 

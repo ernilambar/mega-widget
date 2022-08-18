@@ -1,6 +1,6 @@
 {
   "name": "mega-widget",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A small plugin to display all core widgets.",
   "repository": {
     "type": "git",
@@ -9,14 +9,16 @@
   "author": "Nilambar Sharma",
   "license": "GPL-2.0+",
   "scripts": {
-    "pot": "npm run textdomain && npm run language",
-    "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
+    "preinstall": "npx only-allow pnpm",
+    "pot": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
     "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules",
-		"readme": "wp-readme-to-md",
-    "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copyfiles \"**/*.*\" deploy/mega-widget -e \"node_modules/**/*.*\" -e \"package.json\" -e \"package-lock.json\""
+    "readme": "wp-readme-to-md",
+    "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/"
   },
   "devDependencies": {
-    "copyfiles": "^2.4.1",
+    "bestzip": "^2.2.1",
+    "copy-files-from-to": "^3.2.2",
+    "cross-var": "^1.1.0",
     "node-wp-i18n": "^1.2.6",
     "shx": "^0.3.4",
     "wp-readme-to-markdown": "^1.0.1"
