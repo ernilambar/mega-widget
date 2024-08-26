@@ -43,7 +43,7 @@ class Mega_Widget extends WP_Widget {
 	 * @since 1.0.0
 	 * @var array
 	 */
-	protected $images = array();
+	protected $images = [];
 
 	/**
 	 * Constructor.
@@ -54,19 +54,19 @@ class Mega_Widget extends WP_Widget {
 		parent::__construct(
 			'mega-widget',
 			esc_html__( 'Mega Widget', 'mega-widget' ),
-			array(
+			[
 				'classname'   => 'mega-widget',
 				'description' => esc_html__( 'Test multiple widgets at the same time.', 'mega-widget' ),
-			)
+			]
 		);
 
 		// Single image.
 		$latest_image = get_posts(
-			array(
+			[
 				'numberposts'    => 1,
 				'post_type'      => 'attachment',
 				'post_mime_type' => 'image/jpeg',
-			)
+			]
 		);
 
 		if ( ! empty( $latest_image ) ) {
@@ -75,11 +75,11 @@ class Mega_Widget extends WP_Widget {
 
 		// Gallery setup.
 		$latest_images = get_posts(
-			array(
+			[
 				'numberposts'    => 9,
 				'post_type'      => 'attachment',
 				'post_mime_type' => 'image/jpeg',
-			)
+			]
 		);
 
 		if ( ! empty( $latest_images ) ) {
@@ -125,7 +125,7 @@ class Mega_Widget extends WP_Widget {
 
 			the_widget( $widget[0], $_instance, $args );
 
-			self::$iterator++;
+			++self::$iterator;
 		}
 	}
 
@@ -148,268 +148,268 @@ class Mega_Widget extends WP_Widget {
 	 * @since 1.0.0
 	 */
 	public function get_widget_config() {
-		$widgets = array(
-			array(
+		$widgets = [
+			[
 				'WP_Widget_Search',
-				array(
+				[
 					'title' => esc_html__( 'Search', 'mega-widget' ),
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Block',
-				array(
+				[
 					'content' => '<!-- wp:search /-->',
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Recent_Posts',
-				array(
+				[
 					'title'  => esc_html__( 'Recent Posts', 'mega-widget' ),
 					'number' => 5,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Block',
-				array(
-					'content'  => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Recent Posts New</h2><!-- /wp:heading --><!-- wp:latest-posts /--></div><!-- /wp:group -->',
-				),
-			),
-			array(
+				[
+					'content' => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Recent Posts New</h2><!-- /wp:heading --><!-- wp:latest-posts /--></div><!-- /wp:group -->',
+				],
+			],
+			[
 				'WP_Widget_Media_Image',
-				array(
+				[
 					'title'         => esc_html__( 'Simple Image', 'mega-widget' ),
 					'attachment_id' => $this->image_attachment_id,
 					'size'          => 'large',
 					'caption'       => esc_html__( 'No caption is also a caption.', 'mega-widget' ),
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Media_Image',
-				array(
+				[
 					'title'             => esc_html__( 'Linked Image', 'mega-widget' ),
 					'attachment_id'     => $this->image_attachment_id,
 					'size'              => 'large',
 					'link_type'         => 'file',
 					'link_target_blank' => true,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Recent_Comments',
-				array(
+				[
 					'title'  => esc_html__( 'Recent Comments', 'mega-widget' ),
 					'number' => 5,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Block',
-				array(
+				[
 					'content' => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Recent Comments New</h2><!-- /wp:heading --><!-- wp:latest-comments {"displayAvatar":false,"displayDate":false,"displayExcerpt":false} /--></div><!-- /wp:group -->',
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Meta',
-				array(
+				[
 					'title' => esc_html__( 'Meta', 'mega-widget' ),
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Calendar',
-				array(
+				[
 					'title' => esc_html__( 'Calendar', 'mega-widget' ),
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Block',
-				array(
-					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Calendar New</h2><!-- /wp:heading --><!-- wp:calendar /--></div><!-- /wp:group -->',
-				),
-			),
-			array(
+				[
+					'content' => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Calendar New</h2><!-- /wp:heading --><!-- wp:calendar /--></div><!-- /wp:group -->',
+				],
+			],
+			[
 				'WP_Widget_Media_Gallery',
-				array(
+				[
 					'title'   => esc_html__( 'Gallery: 3 columns ', 'mega-widget' ),
 					'ids'     => array_slice( $this->images, 0, 9 ),
 					'size'    => 'large',
 					'columns' => 3,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Media_Gallery',
-				array(
+				[
 					'title'     => esc_html__( 'Gallery: 2 columns ', 'mega-widget' ),
 					'ids'       => array_slice( $this->images, 0, 4 ),
 					'size'      => 'medium',
 					'link_type' => 'file',
 					'columns'   => 2,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Media_Gallery',
-				array(
+				[
 					'title'     => esc_html__( 'Gallery: 4 columns ', 'mega-widget' ),
 					'ids'       => array_slice( $this->images, 0, 8 ),
 					'size'      => 'thumbnail',
 					'link_type' => 'none',
 					'columns'   => 4,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Archives',
-				array(
+				[
 					'title'    => esc_html__( 'Archives Dropdown', 'mega-widget' ),
 					'count'    => 1,
 					'dropdown' => 1,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Categories',
-				array(
+				[
 					'title'        => esc_html__( 'Categories Dropdown', 'mega-widget' ),
 					'count'        => 1,
 					'hierarchical' => 1,
 					'dropdown'     => 1,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Tag_Cloud',
-				array(
+				[
 					'title'    => esc_html__( 'Tag Cloud', 'mega-widget' ),
 					'taxonomy' => 'post_tag',
 					'count'    => true,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Block',
-				array(
-					'content'  => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Tag Cloud New</h2><!-- /wp:heading --><!-- wp:tag-cloud {"showTagCounts":true} /--></div><!-- /wp:group -->',
-				),
-			),
-			array(
+				[
+					'content' => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Tag Cloud New</h2><!-- /wp:heading --><!-- wp:tag-cloud {"showTagCounts":true} /--></div><!-- /wp:group -->',
+				],
+			],
+			[
 				'WP_Widget_Archives',
-				array(
+				[
 					'title'    => esc_html__( 'Archives List', 'mega-widget' ),
 					'count'    => 1,
 					'dropdown' => 0,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Block',
-				array(
-					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Archives New</h2><!-- /wp:heading --><!-- wp:archives {"showPostCounts":true} /--></div><!-- /wp:group -->',
-				),
-			),
-			array(
+				[
+					'content' => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Archives New</h2><!-- /wp:heading --><!-- wp:archives {"showPostCounts":true} /--></div><!-- /wp:group -->',
+				],
+			],
+			[
 				'WP_Widget_Categories',
-				array(
+				[
 					'title'        => esc_html__( 'Categories List', 'mega-widget' ),
 					'count'        => 1,
 					'hierarchical' => 1,
 					'dropdown'     => 0,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Block',
-				array(
-					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Categories New</h2><!-- /wp:heading --><!-- wp:categories {"showPostCounts":true} /--></div><!-- /wp:group -->',
-				),
-			),
-			array(
+				[
+					'content' => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Categories New</h2><!-- /wp:heading --><!-- wp:categories {"showPostCounts":true} /--></div><!-- /wp:group -->',
+				],
+			],
+			[
 				'WP_Widget_Pages',
-				array(
+				[
 					'title'   => esc_html__( 'Pages', 'mega-widget' ),
 					'sortby'  => 'menu_order',
 					'exclude' => '',
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Block',
-				array(
-					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Pages New</h2><!-- /wp:heading --><!-- wp:page-list /--></div><!-- /wp:group -->',
-				),
-			),
-			array(
+				[
+					'content' => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Pages New</h2><!-- /wp:heading --><!-- wp:page-list /--></div><!-- /wp:group -->',
+				],
+			],
+			[
 				'WP_Widget_RSS',
-				array(
+				[
 					'title'        => esc_html__( 'RSS', 'mega-widget' ),
 					'url'          => 'https://themeshaper.com/feed/',
 					'items'        => 2,
 					'show_author'  => true,
 					'show_date'    => true,
 					'show_summary' => true,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Block',
-				array(
-					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>RSS New</h2><!-- /wp:heading --><!-- wp:rss {"feedURL":"https://themeshaper.com/feed/","itemsToShow":2,"displayExcerpt":true,"displayAuthor":true,"displayDate":true} /--></div><!-- /wp:group -->',
-				),
-			),
-			array(
+				[
+					'content' => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>RSS New</h2><!-- /wp:heading --><!-- wp:rss {"feedURL":"https://themeshaper.com/feed/","itemsToShow":2,"displayExcerpt":true,"displayAuthor":true,"displayDate":true} /--></div><!-- /wp:group -->',
+				],
+			],
+			[
 				'WP_Widget_Text',
-				array(
+				[
 					'title'  => esc_html__( 'Text', 'mega-widget' ),
 					'text'   => $this->get_text(),
 					'filter' => true,
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Media_Audio',
-				array(
+				[
 					'title' => esc_html__( 'Audio', 'mega-widget' ),
 					'url'   => 'https://wpthemetestdata.files.wordpress.com/2008/06/originaldixielandjazzbandwithalbernard-stlouisblues.mp3',
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Block',
-				array(
-					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Audio New</h2><!-- /wp:heading --><!-- wp:audio -->
+				[
+					'content' => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Audio New</h2><!-- /wp:heading --><!-- wp:audio -->
 					<figure class="wp-block-audio"><audio controls src="https://wpthemetestdata.files.wordpress.com/2008/06/originaldixielandjazzbandwithalbernard-stlouisblues.mp3"></audio></figure>
 					<!-- /wp:audio --></div><!-- /wp:group -->',
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Media_Video',
-				array(
+				[
 					'title' => esc_html__( 'Video', 'mega-widget' ),
 					'url'   => 'https://www.youtube.com/watch?v=SQEQr7c0-dw',
-				),
-			),
-			array(
+				],
+			],
+			[
 				'WP_Widget_Block',
-				array(
-					'content'    => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Video New</h2><!-- /wp:heading --><!-- wp:embed {"url":"https://www.youtube.com/watch?v=SQEQr7c0-dw","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+				[
+					'content' => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Video New</h2><!-- /wp:heading --><!-- wp:embed {"url":"https://www.youtube.com/watch?v=SQEQr7c0-dw","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
 					<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
 					https://www.youtube.com/watch?v=SQEQr7c0-dw
 					</div></figure>
 					<!-- /wp:embed --></div><!-- /wp:group -->',
-				),
-			),
-		);
+				],
+			],
+		];
 
 		$menu = $this->get_nav_menu();
 		if ( $menu ) {
-			$widgets[] = array(
+			$widgets[] = [
 				'WP_Nav_Menu_Widget',
-				array(
+				[
 					'title'    => esc_html__( 'Nav Menu', 'mega-widget' ),
 					'nav_menu' => $menu,
-				),
-			);
+				],
+			];
 		}
 
 		global $wp_widget_factory;
 		$available_widgets = array_keys( $wp_widget_factory->widgets );
 		if ( in_array( 'WP_Widget_Links', $available_widgets, true ) ) {
-			$widgets[] = array(
+			$widgets[] = [
 				'WP_Widget_Links',
-				array(
+				[
 					'title'       => esc_html__( 'Links', 'mega-widget' ),
 					'description' => 1,
 					'name'        => 1,
 					'rating'      => 1,
 					'images'      => 1,
-				),
-			);
+				],
+			];
 		}
 
 		return apply_filters( 'mega_widget_config', $widgets );
@@ -483,7 +483,7 @@ class Mega_Widget extends WP_Widget {
 	 * @since 1.0.0
 	 */
 	public function get_text() {
-		$html = array();
+		$html = [];
 
 		$html[] = '<strong>' . esc_html__( 'Large image: Hand Coded', 'mega-widget' ) . '</strong>';
 		$html[] = '<img src="' . MEGA_WIDGET_URL . '/images/castle.jpg" alt="">';

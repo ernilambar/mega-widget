@@ -1,26 +1,50 @@
 {
-  "name": "mega-widget",
-  "version": "1.0.3",
-  "description": "A small plugin to display all core widgets.",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/ernilambar/mega-widget.git"
-  },
-  "author": "Nilambar Sharma",
-  "license": "GPL-2.0+",
-  "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "pot": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
-    "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules",
-    "readme": "wp-readme-to-md",
-    "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/"
-  },
-  "devDependencies": {
-    "bestzip": "^2.2.1",
-    "copy-files-from-to": "^3.2.2",
-    "cross-var": "^1.1.0",
-    "node-wp-i18n": "^1.2.6",
-    "shx": "^0.3.4",
-    "wp-readme-to-markdown": "^1.0.1"
-  }
+	"name": "mega-widget",
+	"version": "1.0.4",
+	"description": "A small plugin to display all core widgets.",
+	"main_file": "mega-widget.php",
+	"author": "Nilambar Sharma",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress",
+		"wordpress-plugin"
+	],
+	"homepage": "https://github.com/ernilambar/mega-widget",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ernilambar/mega-widget.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ernilambar/mega-widget/issues"
+	},
+	"packtor": {
+		"files": [
+			"**/*",
+			"!*.js",
+			"!*.json",
+			"!*.lock",
+			"!*.md",
+			"!*.yaml",
+			"!vendor/**/*"
+		]
+	},
+	"npmpackagejsonlint": {
+		"extends": "@wordpress/npm-package-json-lint-config"
+	},
+	"devDependencies": {
+		"@wordpress/npm-package-json-lint-config": "^5.6.0",
+		"@wordpress/prettier-config": "^4.6.0",
+		"easy-replace-in-files": "^1.0.3",
+		"npm-package-json-lint": "^8.0.0",
+		"packtor": "^1.0.2",
+		"prettier": "npm:wp-prettier@^3.0.3",
+		"rimraf": "^6.0.1"
+	},
+	"scripts": {
+		"format": "prettier \"**/*.{cjs,css,js,json,mjs}\" --write",
+		"lint-pkg-json": "npmPkgJsonLint .",
+		"pot": "composer run-script pot",
+		"version": "easy-replace-in-files",
+		"deploy": "packtor"
+	}
 }
