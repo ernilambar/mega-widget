@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Coding Standards for plugin">
+	<description>Apply WordPress Coding Standards</description>
+
+	<!-- Prevent errors caused by WordPress Coding Standards not supporting PHP 8.0+. See https://github.com/WordPress/WordPress-Coding-Standards/issues/2035 -->
+	<ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
+
+	<!-- What to scan -->
+	<file>.</file>
+
+	<!-- Exclude files and folders -->
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>*/deploy/*</exclude-pattern>
+	<exclude-pattern>*/languages/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*lib/*</exclude-pattern>
+	<exclude-pattern>*\.(css|js)</exclude-pattern>
+
+	<!-- How to scan -->
+	<!-- Usage instructions: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->
+	<!-- Annotated ruleset: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
+	<arg value="sp"/> <!-- Show sniff and progress -->
+	<arg name="basepath" value="./"/><!-- Strip the file paths down to the relevant bit -->
+	<arg name="colors"/>
+	<arg name="extensions" value="php"/>
+	<arg name="parallel" value="8"/><!-- Enables parallel processing when available for faster results. -->
+
+	<!-- Minimum support WP Version. -->
+	<config name="minimum_wp_version" value="6.3"/>
+
+	<!-- PHP version check. -->
+	<config name="testVersion" value="7.2-"/>
+
+	<!-- Don't worry about files that don't contain any code -->
+	<rule ref="Internal.NoCodeFound">
+		<severity>0</severity>
+	</rule>
+
+	<!-- For CI, don't fail on warnings -->
+	<config name="ignore_warnings_on_exit" value="1"/>
+
+	<rule ref="WordPress">
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+	</rule>
+
+	<!-- Enforce short arrays. -->
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
+	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
+		<properties>
+			<property name="blank_line_check" value="true"/>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress-Extra">
+		<!-- Forget about file names -->
+		<exclude name="WordPress.Files.FileName"/>
+
+		<!-- Allow WP global modification -->
+		<exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited"/>
+
+		<!-- This nonce sniff almost never works right -->
+		<exclude name="WordPress.Security.NonceVerification.Missing"/>
+
+		<!-- Remove nonce notice -->
+		<exclude name="WordPress.Security.NonceVerification.Recommended"/>
+	</rule>
+
+	<!-- Make missing translator comment a warning. -->
+	<rule ref="WordPress.WP.I18n.MissingTranslatorsComment">
+		<type>warning</type>
+	</rule>
+
+	<!-- Sometimes we need to override globals -->
+	<rule ref="WordPress.WP.GlobalVariablesOverride.OverrideProhibited">
+		<type>warning</type>
+	</rule>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array" value="mega-widget" />
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.Utils.I18nTextDomainFixer">
+		<properties>
+			<property name="old_text_domain" type="array">
+				<element value="" />
+			</property>
+			<property name="new_text_domain" value="mega-widget" />
+		</properties>
+	</rule>
+
+	<!-- Loads the PHP Compatibility ruleset. -->
+	<rule ref="PHPCompatibility">
+		<exclude name="PHPCompatibility.FunctionUse.NewFunctions.str_containsFound"/>
+		<exclude name="PHPCompatibility.FunctionUse.NewFunctions.str_starts_withFound"/>
+		<exclude name="PHPCompatibility.FunctionUse.NewFunctions.str_ends_withFound"/>
+	</rule>
+
+	<!-- Disallows grouped use declarations. -->
+	<rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse" />
+	<!-- Disallows leading backslash in use statement. -->
+	<rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash" />
+	<!-- Checks whether uses at the top of a file are alphabetically sorted. -->
+	<rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
+	<!-- Prohibits uses from the same namespace. -->
+	<rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace" />
+	<!-- Looks for unused imports from other namespaces. -->
+	<rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+		<properties>
+			<property name="searchAnnotations" value="true" />
+		</properties>
+	</rule>
+	<!-- All references to functions, classes and constants should import using a use statement. -->
+	<rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
+		<properties>
+			<property name="allowFullyQualifiedGlobalFunctions" value="true" />
+			<property name="allowFullyQualifiedGlobalClasses" value="true" />
+			<property name="allowFullyQualifiedGlobalConstants" value="true" />
+			<property name="allowFallbackGlobalFunctions" value="true" />
+			<property name="allowFallbackGlobalConstants" value="true" />
+			<property name="allowFullyQualifiedNameForCollidingClasses" value="true" />
+		</properties>
+	</rule>
+
+</ruleset>

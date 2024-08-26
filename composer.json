@@ -1,0 +1,37 @@
+{
+	"name": "ernilambar/mega-widget",
+	"description": "Mega Widget",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=7.2.24"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"php-parallel-lint/php-parallel-lint": "^1.4",
+		"phpcompatibility/php-compatibility": "dev-develop#2b7b6e8f5d0ccae3bd41c25bcf1298884a5e1f62",
+		"slevomat/coding-standard": "^8.15",
+		"wp-cli/i18n-command": "^2.6",
+		"wp-coding-standards/wpcs": "^3.1"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"ergebnis/composer-normalize": true
+		},
+		"optimize-autoloader": true,
+		"process-timeout": 7200,
+		"sort-packages": true
+	},
+	"scripts": {
+		"format": "@php ./vendor/bin/phpcbf --report-full --report-summary",
+		"lint": [
+			"@lint-php",
+			"@phpcs"
+		],
+		"lint-php": "@php ./vendor/bin/parallel-lint --colors --exclude .git --exclude vendor --exclude node_modules --exclude deploy .",
+		"phpcs": "@php ./vendor/bin/phpcs --report-full --report-summary",
+		"pot": "./vendor/bin/wp i18n make-pot . --exclude=build,deploy,node_modules,vendor --headers='{\"POT-Creation-Date\":\"\"}'"
+	}
+}
